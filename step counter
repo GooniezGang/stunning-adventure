@@ -1,0 +1,26 @@
+class StepCounter:
+    def __init__(self):
+        self.steps = 0
+
+    def add_step(self):
+        self.steps += 1
+
+    def get_total_steps(self):
+        return self.steps
+
+if __name__ == "__main__":
+    step_counter = StepCounter()
+
+    while True:
+        action = input("Enter 'walk' to add a step, 'quit' to exit: ")
+
+        if action.lower() == "walk":
+            step_counter.add_step()
+            print("Step added!")
+        elif action.lower() == "quit":
+            break
+        else:
+            print("Invalid input. Please try again.")
+
+    total_steps = step_counter.get_total_steps()
+    print("Total steps taken:", total_steps)
